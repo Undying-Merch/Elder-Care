@@ -28,7 +28,7 @@ public partial class MainPage : ContentPage
             }
             else { Preferences.Default.Remove("user"); Preferences.Default.Remove("pass"); }
 
-			Navigation.PushAsync(new TestPage());
+			Navigation.PushAsync(new Menu());
         }
 		else
 		{

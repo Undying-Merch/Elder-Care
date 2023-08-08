@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="TestPage.xaml">
+	  <MauiXaml Update="Menu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

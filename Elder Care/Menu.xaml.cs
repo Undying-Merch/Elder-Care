@@ -6,4 +6,13 @@ public partial class Menu : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void gotoQR(object sender, EventArgs e)
+	{
+		if (MediaPicker.Default.IsCaptureSupported)
+		{
+			MediaPicker.Default.CapturePhotoAsync();
+		}
+		else { DisplayAlert("Error", "Camera not supported", "OK"); }
+    }
 }

@@ -7,6 +7,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height=".05*"/>
             <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -19,11 +20,7 @@
                Text="Navigation Menu:"
                HorizontalOptions="Center"/>
 
-        <Button Grid.Row="1" Grid.Column="0"
-                Text="QR Scan"
-                BackgroundColor="Chocolate"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+        
         <Button Grid.Row="1" Grid.Column="1"
                 Text="Personal List"
                 BackgroundColor="Chocolate"
@@ -37,7 +34,17 @@
 
         <Image Grid.Row="2" Grid.Column="1"
                Source="test_gif.gif"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+               IsAnimationPlaying="true"/>
+
+        <ImageButton Grid.Row="1" Grid.Column="0"
+                     Source="qr_image.png"
+                     VerticalOptions="Center"
+                     Clicked="gotoQR"/>
+        <Label Grid.Row="2" Grid.Column="0"
+                Text="QR Scanner"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"/>
 
 
     </Grid>

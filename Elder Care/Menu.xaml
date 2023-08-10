@@ -25,7 +25,8 @@
                 Text="Personal List"
                 BackgroundColor="Chocolate"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                Clicked="gotoPersonalOverview"/>
         <Button Grid.Row="1" Grid.Column="2"
                 Text="A third BTN"
                 BackgroundColor="Chocolate"

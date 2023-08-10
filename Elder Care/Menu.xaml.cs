@@ -15,4 +15,9 @@ public partial class Menu : ContentPage
 		}
 		else { DisplayAlert("Error", "Camera not supported", "OK"); }
     }
+
+	private void gotoPersonalOverview(object  sender, EventArgs e)
+	{
+		Navigation.PushAsync( new Personel_Overview() );
+	}
 }

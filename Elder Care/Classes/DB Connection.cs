@@ -39,7 +39,7 @@ namespace Elder_Care.Classes
         public List<institution> getAllInstitution()
         {
             List<institution> instits = new List<institution>();
-            string json = client.GetStringAsync("http://192.168.1.148:8000/data/institutionliste").Result;
+            string json = client.GetStringAsync("http://192.168.1.148:8000/data/institutionliste/").Result;
             string[] institutionStrings = jsonSplit(json);
             for(int i = 0;i < institutionStrings.Length; i++)
             {

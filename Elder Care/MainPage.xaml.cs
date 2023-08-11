@@ -1,8 +1,10 @@
 ﻿namespace Elder_Care;
+using Classes;
 
 public partial class MainPage : ContentPage
 {
 	private bool passHidden = true;
+	DB_Connection conn = new DB_Connection();
 
 	public MainPage()
 	{
@@ -19,7 +21,12 @@ public partial class MainPage : ContentPage
 
 	private void nextPage(object sender, EventArgs e)
 	{
-		if (userEntry.Text.ToString() == "jolj" && passEntry.Text.ToString() == "Password")
+		bool loginSuccess = false;
+
+		loginSuccess = conn.loginCheck(userEntry.Text.ToString(), passEntry.Text.ToString());
+		
+		
+		if (loginSuccess)
 		{
             if (loginRemember.IsChecked == true)
             {

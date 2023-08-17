@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="Elder_Care.Camera"
+             Title="Camera">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".33*"/>
+            <ColumnDefinition Width=".33*"/>
+            <ColumnDefinition Width=".33*"/>
+        </Grid.ColumnDefinitions>
+
+        <cv:CameraView Grid.Column="1" Grid.Row="1"
+                       WidthRequest="300" HeightRequest="300"
+                       x:Name="cameraView"
+                       CamerasLoaded="cameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
+                       BarcodeDetected="cameraView_BarcodeDetected"/>
+
+        <Label Grid.Row="4" Grid.Column="1"
+               Text="No QR Scanned"
+               x:Name="QRLabel"/>
+
+    </Grid>
+</ContentPage>

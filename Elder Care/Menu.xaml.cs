@@ -9,11 +9,7 @@ public partial class Menu : ContentPage
 
 	private async void gotoQR(object sender, EventArgs e)
 	{
-		if (MediaPicker.Default.IsCaptureSupported)
-		{
-			MediaPicker.Default.CapturePhotoAsync();
-		}
-		else { DisplayAlert("Error", "Camera not supported", "OK"); }
+		Navigation.PushAsync(new Camera());
     }
 
 	private void gotoPersonalOverview(object  sender, EventArgs e)

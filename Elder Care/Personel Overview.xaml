@@ -34,8 +34,7 @@
                      x:Name="callBTN"
                      Source="phone_icon.png"
                      HorizontalOptions="Center"
-                     IsEnabled="False"
-                     Clicked="callEmpleoyee"/>
+                     IsEnabled="False"/>
 
     </Grid>
 </ContentPage>

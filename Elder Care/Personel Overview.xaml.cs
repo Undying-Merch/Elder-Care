@@ -1,5 +1,4 @@
 namespace Elder_Care;
-
 using Classes;
 
 public partial class Personel_Overview : ContentPage
@@ -60,25 +59,6 @@ public partial class Personel_Overview : ContentPage
 		if (callBTN.IsEnabled == false)
 		{
 			callBTN.IsEnabled = true;
-		}
-	}
-
-	private void callEmpleoyee(object sender, EventArgs e)
-	{
-		int pickerId = personPicker.SelectedIndex;
-		for(int i = 0; i < personels.Count;i++)
-		{
-			if (personPicker.Items[pickerId] == personels[i].navn)
-			{
-				if (PhoneDialer.Default.IsSupported)
-				{
-					PhoneDialer.Default.Open(personels[i].telefon.ToString());
-				}
-				else
-				{
-                    DisplayAlert("Error", "Phone Dialer not supported", "OK");
-                }
-			}
 		}
 	}
 }

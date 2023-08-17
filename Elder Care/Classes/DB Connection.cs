@@ -65,20 +65,6 @@ namespace Elder_Care.Classes
             }
             return splittedString;
         }
-
-
-        public bool loginCheck(string username, string password)
-        {
-            List<Personel> personels = getAllPersonel();
-            for (int i = 0;i < personels.Count;i++)
-            {
-                if (personels[i].brugernavn == username && personels[i].password == password)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
         
 
         

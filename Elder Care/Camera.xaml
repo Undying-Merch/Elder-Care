@@ -11,7 +11,7 @@
             <RowDefinition Height=".05*"/>
             <RowDefinition Height=".05*"/>
             <RowDefinition Height=".05*"/>
-            <RowDefinition Height=".5*"/>
+            <RowDefinition Height=".05*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".33*"/>
@@ -19,15 +19,23 @@
             <ColumnDefinition Width=".33*"/>
         </Grid.ColumnDefinitions>
 
-        <cv:CameraView Grid.Column="1" Grid.Row="1"
+        <cv:CameraView Grid.Row="3" Grid.Column="1"
                        WidthRequest="300" HeightRequest="300"
                        x:Name="cameraView"
                        CamerasLoaded="cameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
-                       BarcodeDetected="cameraView_BarcodeDetected"/>
+                       BarcodeDetected="cameraView_BarcodeDetected"
+                       />
 
-        <Label Grid.Row="4" Grid.Column="1"
+        <Label Grid.Row="5" Grid.Column="1"
                Text="No QR Scanned"
                x:Name="QRLabel"/>
+
+        <Button Grid.Row="5" Grid.Column="2"
+                Text="Jonas har en kæmpe knap"
+                x:Name="QRBTN"
+                IsEnabled="False"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"/>
 
     </Grid>
 </ContentPage>

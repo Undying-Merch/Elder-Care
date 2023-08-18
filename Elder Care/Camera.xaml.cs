@@ -1,12 +1,12 @@
 using Camera.MAUI.ZXingHelper;
-using static System.Net.WebRequestMethods;
+using Elder_Care.Classes;
 
 namespace Elder_Care;
 
 public partial class Camera : ContentPage
 {
-    private string addressString = "http://192.168.1.148";
-
+    DB_Connection conn = new DB_Connection();
+    string scanned;
 
     public Camera()
 	{
@@ -30,25 +30,31 @@ public partial class Camera : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
-            string scanned = args.Result[0].ToString();
-            string str = trimString(scanned, addressString.Length);
+            scanned = args.Result[0].ToString();
+            string str = trimString(scanned, conn.Address.Length);
 
-            if (str != addressString)
+            if (str != conn.Address)
             {
                 QRLabel.TextColor = Colors.Red;
                 QRLabel.Text = "QR not recognized";
                 QRBTN.IsEnabled = false;
 
             }
-            else if (str == addressString)
+            else if (str == conn.Address)
             {
                 QRLabel.TextColor = Colors.Green;
                 QRLabel.Text = "QR Recognized";
                 QRBTN.IsEnabled = true;
             }
             
-            //QRLabel.Text = args.Result[0].Text;
         });
+    }
+
+    private async void searchQR (object sender, EventArgs e)
+    {
+        Person person = conn.GetPerson(scanned);
+
+        Navigation.PushAsync(new QRSearched(person));
     }
 
     private string trimString(string str, int maxInt)

@@ -16,11 +16,15 @@ namespace Elder_Care.Classes
         HttpClient client;
         JsonSerializerOptions options;
         public string Address = "http://192.168.1.148";
+        private string token = "0d8cad414acb80e431e9da62b6a8c895ef3862b0";
+
+
 
         public DB_Connection()
         {
             client = new HttpClient();
             options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, WriteIndented = true };
+            client.DefaultRequestHeaders.Add("Authorization", $"Token {token}");
         }
 
         public Person GetPerson(string personURL)

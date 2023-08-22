@@ -35,7 +35,7 @@
         <Button Grid.Row="4" Grid.Column="1"
                 Text="Search:"
                 x:Name="QRBTN"
-                IsEnabled="True"
+                IsEnabled="False"
                 HorizontalOptions="Center"
                 VerticalOptions="Start"
                 Clicked="searchQR"/>
